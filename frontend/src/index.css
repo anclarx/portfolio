@@ -1,1 +1,75 @@
 @import "tailwindcss";
+
+@theme static {
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-maroon: #5a1a26;
+  --color-dark-maroon: #3b0f18;
+  --color-black: #14110f;
+  --color-deep-moss: #262d22;
+  --color-wallpaper: #3c4733;
+  --color-sage: #7d8a6c;
+  --color-parchment: #f1ebdc;
+  --color-shadow-paper: #e4dac2;
+  --color-old-rose: #d9b5ae;
+  --color-old-gold: #b89a5a;
+  --color-beige-folder: #9a8660;
+
+  --font-paragraf: "Paragraf", sans-serif;
+  --font-arkhaven: "Arkhaven", sans-serif;
+}
+
+@font-face {
+  font-family: "Arkhaven";
+  src: url("/fonts/arkhaven/Arkhaven.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Thin.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Paragraf";
+  src: url("/fonts/paragraf/Paragrafv0.2Trial-Heavy.otf") format("opentype");
+  font-weight: 950;
+  font-style: normal;
+}
