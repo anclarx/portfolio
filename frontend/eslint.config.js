@@ -20,7 +20,11 @@ export default defineConfig([
     },
   },
   {
-    files: ["src/components/text.tsx", "src/components/button.tsx"],
+    files: [
+      "src/components/text.tsx",
+      "src/components/button.tsx",
+      "src/context/languageContext.tsx",
+    ],
     rules: {
       "react-refresh/only-export-components": "off",
     },
