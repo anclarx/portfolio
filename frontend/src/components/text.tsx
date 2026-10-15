@@ -5,16 +5,10 @@ export const textVariants = cva("text-black", {
   variants: {
     variant: {
       "body-normal": "font-paragraf text-xl leading-8 font-normal",
-      "body-xl-uppercase":
+      "body-normal-uppercase":
         "font-paragraf text-xl leading-7 font-normal uppercase",
-      "body-xl-lowercase":
-        "font-paragraf text-xl leading-7 font-normal lowercase",
-      "body-xl-bold": "font-paragraf text-xl leading-7 font-bold lowercase",
-      "body-base": "font-paragraf text-base leading-5.25 font-normal",
-      "body-base-uppercase":
-        "font-paragraf text-base leading-5.25 font-normal uppercase",
-      "journal-name": "font-arkhaven ",
-      "journal-title": "font-arkhaven",
+      title: "font-arkhaven text-8xl leading-32",
+      subtitle: "font-arkhaven text-6xl leading-16",
     },
   },
   defaultVariants: {

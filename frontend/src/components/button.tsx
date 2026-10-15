@@ -1,23 +1,18 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import Text from "./text";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center cursor-pointer shrink-0 font-paragraf",
+  "inline-flex items-center justify-center cursor-pointer shrink-0 font-paragraf px-6 py-2",
   {
     variants: {
       variant: {
-        outline: "bg-transparent border border-black",
-        solid: "bg-black text-white border border-black",
-      },
-      size: {
-        default: "px-6 py-2",
-        sm: "px-4 py-1.5 text-sm",
-        lg: "px-8 py-3 text-lg",
+        outline: "bg-transparent border border-black text-black",
+        "outline-white": "bg-transparent border border-white text-white",
       },
     },
     defaultVariants: {
       variant: "outline",
-      size: "default",
     },
   },
 );
@@ -31,20 +26,23 @@ interface ButtonProps
 }
 
 export default function Button({
-  variant,
-  size,
+  variant = "outline",
   className,
   children,
   type = "submit",
   ...props
 }: ButtonProps) {
+  const textColor = variant === "outline-white" ? "text-white" : "text-black";
+
   return (
     <button
       type={type}
-      className={buttonVariants({ variant, size, className })}
+      className={buttonVariants({ variant, className })}
       {...props}
     >
-      {children}
+      <Text variant="body-normal-uppercase" className={textColor}>
+        {children}
+      </Text>
     </button>
   );
 }

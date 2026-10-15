@@ -15,18 +15,11 @@ interface InputProps {
 }
 
 const LINE_HEIGHT = 35;
+const LINE_COLOR = "var(--color-black)";
 
 function linePattern(color: string) {
-  return `repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent ${LINE_HEIGHT - 1}px,
-    ${color} ${LINE_HEIGHT - 1}px,
-    ${color} ${LINE_HEIGHT}px
-  )`;
+  return `linear-gradient(to bottom, transparent ${LINE_HEIGHT - 1}px, ${color} ${LINE_HEIGHT - 1}px, ${color} ${LINE_HEIGHT}px)`;
 }
-
-const LINE_COLOR = "var(--color-black)";
 
 export default function Input({
   label,
@@ -38,21 +31,16 @@ export default function Input({
   name,
 }: InputProps) {
   const baseClass =
-    "w-full bg-transparent outline-none text-black px-1 placeholder:opacity-50";
-
-  const baseStyle: React.CSSProperties = {
-    lineHeight: `${LINE_HEIGHT}px`,
-    backgroundImage: linePattern(LINE_COLOR),
-  };
+    "w-full bg-transparent outline-none text-xl text-black px-1 placeholder:font-paragraf placeholder:opacity-50";
 
   return (
     <div className="flex items-start w-full gap-2">
       {label && (
         <div
-          className="w-16 shrink-0 flex items-center"
+          className="w-24 shrink-0 flex items-center"
           style={{ height: LINE_HEIGHT }}
         >
-          <Text variant="body-base-uppercase">{label}</Text>
+          <Text variant="body-normal-uppercase">{label}</Text>
         </div>
       )}
 
@@ -64,7 +52,11 @@ export default function Input({
           onChange={onChange}
           placeholder={placeholder}
           className={baseClass}
-          style={{ ...baseStyle, height: LINE_HEIGHT }}
+          style={{
+            height: LINE_HEIGHT,
+            lineHeight: `${LINE_HEIGHT}px`,
+            borderBottom: `1px solid ${LINE_COLOR}`,
+          }}
         />
       ) : (
         <textarea
@@ -76,8 +68,10 @@ export default function Input({
           rows={rows}
           className={`${baseClass} resize-none overflow-y-auto text-justify hyphens-auto`}
           style={{
-            ...baseStyle,
             height: rows * LINE_HEIGHT,
+            lineHeight: `${LINE_HEIGHT}px`,
+            backgroundImage: linePattern(LINE_COLOR),
+            backgroundSize: `100% ${LINE_HEIGHT}px`,
             backgroundAttachment: "local",
             textAlignLast: "left",
             textJustify: "inter-word",

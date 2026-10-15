@@ -4,17 +4,36 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: #edebe7;
+  background: #f3f1ed;
   margin: 0;
+}
+
+/* Itens da seção flutuante (floating-section.tsx).
+   --p (0 a 1) é o progresso do scroll, atualizado pelo componente.
+   Cada item define --w --sl --fl --ft --d --win --rot. */
+.floating-item {
+  --t: clamp(0, calc((var(--p) - var(--d)) / var(--win)), 1);
+  /* ease-out: sobe rápido e desacelera ao chegar */
+  --e: calc(1 - (1 - var(--t)) * (1 - var(--t)));
+  position: absolute;
+  width: calc(var(--w) * 1%);
+  left: calc((var(--sl) + (var(--fl) - var(--sl)) * var(--e)) * 1%);
+  /* --drop (px, definido pelo componente) leva o item pra baixo da tela */
+  top: calc(var(--ft) * 1% + (1 - var(--e)) * var(--drop, 1500) * 1px);
+  opacity: clamp(0, calc(var(--t) * 1000), 1);
+  transform: rotate(calc((1 - var(--e)) * var(--rot) * 1deg));
+  will-change: left, top, transform;
 }
 
 @theme static {
   --color-*: initial;
   --color-white: #fafafa;
+  --color-ice: #f3f1ed;
   --color-maroon: #4a101d;
   --color-black: #100e11;
   --color-jet: #000000;
   --color-ivory: #e8e0d5;
+  --color-gray: #d9d9d9;
 
   --font-paragraf: "Paragraf", sans-serif;
   --font-arkhaven: "Arkhaven", sans-serif;
