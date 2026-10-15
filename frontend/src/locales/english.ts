@@ -23,7 +23,7 @@ export const en: typeof pt = {
     title: "My Portfolio",
     capitularAlt: "Capitular",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi sapien, maximus sit amet malesuada sit amet, rutrum a leo. Vivamus eget purus eget dolor aliquam mattis. Maecenas vitae nisi metus. Vestibulum fringilla erat libero. Donec lacinia ultricies ligula, non cursus nunc viverra vel. Sed aliquet eros tempus maximus tincidunt. Sed at eros et turpis viverra blandit. Pellentesque ac fringilla nisl, ac dapibus velit. Nullam et tellus vitae eros iaculis rutrum. Maecenas ut enim vitae.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mi sapien, maximus sit amet malesuada sit amet, rutrum a leo. Vivamus eget purus eget dolor aliquam mattis. Maecenas vitae nisi metus. Vestibulum fringilla erat libero. Donec lacinia ultricies ligula, non cursus nunc viverra vel. Sed aliquet eros tempus maximus tincidunt. Sed at eros et turpis viverra blandit. Pellentesque ac fringilla nisl, ac dapibus velit.",
     viewArchiveButton: "View archive",
     mainImageAlt: "Journal Highlight",
   },
@@ -49,6 +49,7 @@ export const en: typeof pt = {
     linkedinAlt: "LinkedIn",
   },
   form: {
+    title: "Contact",
     nameLabel: "NAME",
     namePlaceholder: "Your name",
     emailLabel: "E-MAIL",

@@ -68,9 +68,9 @@ export default function Form() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="relative flex flex-col w-full max-w-xl p-8 bg-white shadow-xl rounded-sm border border-black"
+      className="relative flex w-full flex-col rounded-sm border border-black bg-white p-md shadow-xl"
     >
-      <div className="flex flex-col gap-2 mb-6">
+      <div className="mb-sm flex flex-col gap-[0.5rem]">
         <Input
           label={t.nameLabel}
           name="name"
@@ -94,7 +94,7 @@ export default function Form() {
         />
       </div>
 
-      <div className="mb-6">
+      <div className="mb-sm">
         <Input
           name="message"
           value={message}
@@ -107,7 +107,7 @@ export default function Form() {
         />
       </div>
 
-      <div className="flex items-center justify-between gap-4 min-h-10">
+      <div className="flex min-h-[2.5rem] items-center justify-between gap-xs">
         <div className="flex-1" role="status" aria-live="polite">
           {errorMessage && (
             <Text variant="body-normal" className="block text-red-600">
@@ -122,9 +122,7 @@ export default function Form() {
         </div>
 
         <Button variant="outline" disabled={isLoading}>
-          <Text variant="body-normal-uppercase">
-            {isLoading ? t.submittingButton : t.submitButton}
-          </Text>
+          {isLoading ? t.submittingButton : t.submitButton}
         </Button>
       </div>
     </form>
