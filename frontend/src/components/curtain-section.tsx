@@ -1,5 +1,10 @@
 import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
 
+// "Travadinha": quando o conteúdo trava na tela, ele fica parado por esse
+// trecho de scroll (em alturas de tela) antes da próxima seção começar a
+// subir por cima dele.
+const HOLD_SCREENS = 0.4;
+
 /**
  * Efeito "cortina": o conteúdo rola normalmente até a BASE dele encostar na
  * base da tela. Aí ele fica travado (fixed) e a seção SEGUINTE sobe por cima
@@ -31,10 +36,12 @@ export default function CurtainSection({ children }: { children: ReactNode }) {
       if (h === lastH && vh === lastVh) return;
       lastH = h;
       lastVh = vh;
-      // altura reservada = conteúdo + uma tela (o trecho em que a próxima
-      // seção sobe); a margem negativa faz a próxima seção começar embaixo
-      // do conteúdo, na borda inferior da tela, quando ele trava.
-      outer.style.setProperty("--curtain-height", `${h + vh}px`);
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const hold = reduce.matches ? 0 : vh * HOLD_SCREENS;
+      // altura reservada = conteúdo + pausa + uma tela (o trecho em que a
+      // próxima seção sobe); a margem negativa faz a próxima seção começar
+      // embaixo do conteúdo, só depois da pausa.
+      outer.style.setProperty("--curtain-height", `${h + hold + vh}px`);
       outer.style.setProperty("--curtain-pull", `${-vh}px`);
       update();
     };

@@ -71,6 +71,11 @@ const ITEMS = [
 // Projetos sobe e cobre ele (efeito "cortina").
 const PIN_SCREENS = 1.5;
 
+// "Travadinha": quando os itens terminam de chegar, o hero fica parado por
+// esse trecho de scroll (em alturas de tela) antes de Projetos começar a
+// subir. A pessoa rola, mas nada se mexe, e vê a composição montada.
+const HOLD_SCREENS = 0.4;
+
 // Só os 3 cards têm link (navegam pelo react-router); os itens decorativos
 // não fazem nada.
 const noop = () => {};
@@ -102,11 +107,13 @@ export default function FloatingSection({ children }: { children: ReactNode }) {
       lastHero = hero;
       lastVh = vh;
       runway = reduce.matches ? 0 : vh * PIN_SCREENS;
-      // depois dos itens, mais uma altura de tela pra Projetos cobrir o hero
-      pinEnd = runway + vh;
+      const hold = reduce.matches ? 0 : vh * HOLD_SCREENS;
+      // depois dos itens, a pausa e mais uma altura de tela pra Projetos
+      // cobrir o hero
+      pinEnd = runway + hold + vh;
       // trava sempre com o topo do hero no topo da tela (a barra de cima
-      // continua visível). Se o hero for mais alto que a tela, a parte de baixo
-      // só aparece quando o trecho acaba e ele volta a rolar.
+      // continua visível). O hero.tsx tem a altura exata da tela, então
+      // topbar + hero aparecem inteiros desde o primeiro momento.
       stickyTop = 0;
       outer.style.setProperty("--sticky-top", `${stickyTop}px`);
       outer.style.setProperty("--pin-height", `${hero + pinEnd}px`);
@@ -124,6 +131,12 @@ export default function FloatingSection({ children }: { children: ReactNode }) {
     //   after  = hero já coberto    -> absolute, escondido atrás de Projetos
     const update = () => {
       frame = 0;
+      // Se o hero mudou de altura desde a última medida (fontes ou imagens
+      // que terminaram de carregar), mede de novo antes de calcular.
+      if (stage.offsetHeight !== lastHero || window.innerHeight !== lastVh) {
+        measure();
+        return;
+      }
       const scrolled = stickyTop - outer.getBoundingClientRect().top;
       const p = runway === 0 ? 1 : Math.min(1, Math.max(0, scrolled / runway));
       outer.style.setProperty("--p", p.toFixed(4));
