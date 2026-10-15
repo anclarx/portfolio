@@ -31,13 +31,13 @@ export default function Input({
   name,
 }: InputProps) {
   const baseClass =
-    "w-full bg-transparent outline-none text-xl text-black px-1 placeholder:font-paragraf placeholder:opacity-50";
+    "w-full bg-transparent outline-none text-xl text-black px-[0.25rem] placeholder:font-paragraf placeholder:opacity-50";
 
   return (
-    <div className="flex items-start w-full gap-2">
+    <div className="flex w-full items-start gap-[0.5rem]">
       {label && (
         <div
-          className="w-24 shrink-0 flex items-center"
+          className="flex w-[6rem] shrink-0 items-center"
           style={{ height: LINE_HEIGHT }}
         >
           <Text variant="body-normal-uppercase">{label}</Text>

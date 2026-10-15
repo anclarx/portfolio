@@ -33,10 +33,20 @@ body {
   --color-black: #100e11;
   --color-jet: #000000;
   --color-ivory: #e8e0d5;
-  --color-gray: #d9d9d9;
 
   --font-paragraf: "Paragraf", sans-serif;
   --font-arkhaven: "Arkhaven", sans-serif;
+
+  --spacing-*: initial;
+  --spacing-0: 0rem;
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1.5rem;
+  --spacing-md: 2.25rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 3.5rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 4.5rem;
+  --spacing-section: 7.5rem;
 }
 
 @font-face {

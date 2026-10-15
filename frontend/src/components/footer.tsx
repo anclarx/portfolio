@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-white">
-      <div className="mx-auto flex h-59.5 w-300 flex-col gap-7 pt-11">
+      <div className="mx-auto flex h-[14.875rem] w-[75rem] flex-col gap-sm pt-lg">
         <nav className="flex justify-between">
           {translations.nav.map((item) => (
             <a key={item.label} href={item.href} className="hover:underline">
@@ -19,15 +19,15 @@ export default function Footer() {
             </a>
           ))}
         </nav>
-        <div className="h-3 border border-black" />
+        <div className="h-[0.75rem] border border-black" />
         <div className="flex items-start justify-between">
           <Text as="p">
             {t.descriptionLine1}
             <br />
             {t.descriptionLine2}
           </Text>
-          <div className="flex gap-2">
-            <div className="flex shrink-0 items-center border border-black p-0.5">
+          <div className="flex gap-[0.5rem]">
+            <div className="flex shrink-0 items-center border border-black p-[0.125rem]">
               <ItemButton
                 imageUrl={iconGithub}
                 imageAlt={t.githubAlt}
@@ -38,10 +38,10 @@ export default function Footer() {
                     "noopener,noreferrer",
                   )
                 }
-                className="size-10"
+                className="size-[2.5rem]"
               />
             </div>
-            <div className="flex shrink-0 items-center border border-black p-0.5">
+            <div className="flex shrink-0 items-center border border-black p-[0.125rem]">
               <ItemButton
                 imageUrl={iconLinkedin}
                 imageAlt={t.linkedinAlt}
@@ -52,7 +52,7 @@ export default function Footer() {
                     "noopener,noreferrer",
                   )
                 }
-                className="size-10"
+                className="size-[2.5rem]"
               />
             </div>
           </div>

@@ -94,34 +94,34 @@ export default function TopBar() {
     <header
       ref={headerRef}
       data-hidden="false"
-      className="fixed inset-x-0 top-0 z-50 [:root[data-hero-phase=covering]_&]:z-5 [:root[data-hero-phase=after]_&:not([data-reveal=true])]:z-5 border-b border-black bg-ice px-8 py-4 transition-transform duration-300 data-[hidden=true]:-translate-y-full"
+      className="fixed inset-x-0 top-0 z-50 [:root[data-hero-phase=covering]_&]:z-5 [:root[data-hero-phase=after]_&:not([data-reveal=true])]:z-5 border-b border-black bg-ice px-md py-xs transition-transform duration-300 data-[hidden=true]:-translate-y-full"
     >
       <div className="flex w-full items-center justify-between">
-        <div className="flex items-center border border-black p-0.5">
+        <div className="flex items-center border border-black p-[0.125rem]">
           <ItemButton
             imageUrl={logo}
             imageAlt={translations.topBar.logoAlt}
             onClick={() => {}}
-            className="h-11 w-11"
+            className="size-[2.75rem]"
           />
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-xs">
           <Button
             type="button"
             variant="outline"
-            className="flex h-12 items-center justify-center border border-black px-6"
+            className="h-[3rem]"
             onClick={toggleLanguage}
           >
             {translations.languageButton}
           </Button>
 
-          <div className="flex items-center border border-black p-0.5">
+          <div className="flex items-center border border-black p-[0.125rem]">
             <ItemButton
               imageUrl={iconMenu}
               imageAlt={translations.topBar.menuAlt}
               onClick={() => {}}
-              className="h-11 w-11"
+              className="size-[2.75rem]"
             />
           </div>
         </div>

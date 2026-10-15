@@ -13,10 +13,16 @@ import noiseSvg from "../../../assets/utils/noise-effect.svg";
 const FOLDER_OVERLAP = "-mt-[43.75%]";
 
 const CORNER_ORNAMENTS = [
-  { box: "top-0 left-0 h-[179px] w-[172px]", rotate: "rotate-180" },
-  { box: "top-0 right-0 h-[172px] w-[179px]", rotate: "-rotate-90" },
-  { box: "bottom-[3px] -left-1 h-[172px] w-[179px]", rotate: "rotate-90" },
-  { box: "right-1 bottom-[3px] h-[179px] w-[172px]", rotate: "" },
+  { box: "top-0 left-0 h-[11.1875rem] w-[10.75rem]", rotate: "rotate-180" },
+  { box: "top-0 right-0 h-[10.75rem] w-[11.1875rem]", rotate: "-rotate-90" },
+  {
+    box: "bottom-[0.1875rem] -left-[0.25rem] h-[10.75rem] w-[11.1875rem]",
+    rotate: "rotate-90",
+  },
+  {
+    box: "right-[0.25rem] bottom-[0.1875rem] h-[11.1875rem] w-[10.75rem]",
+    rotate: "",
+  },
 ];
 
 export default function Projects() {
@@ -44,7 +50,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-jet px-30 pt-30 pb-30"
+      className="relative overflow-hidden bg-jet p-section"
     >
       <div
         className="pointer-events-none absolute inset-0 z-0 bg-repeat opacity-50"
@@ -59,13 +65,13 @@ export default function Projects() {
           <img
             src={ornament}
             alt=""
-            className={`absolute top-1/2 left-1/2 h-[179px] w-[172px] max-w-none -translate-x-1/2 -translate-y-1/2 ${rotate}`}
+            className={`absolute top-1/2 left-1/2 h-[11.1875rem] w-[10.75rem] max-w-none -translate-x-1/2 -translate-y-1/2 ${rotate}`}
           />
         </div>
       ))}
 
-      <div className="relative z-25 flex items-center gap-33">
-        <div className="ml-[151px] flex min-w-0 flex-[0_1_900px] flex-col">
+      <div className="relative z-25 flex items-center gap-[8.25rem]">
+        <div className="ml-[9.4375rem] flex min-w-0 flex-[0_1_900px] flex-col">
           {FOLDERS.map((folder, index) => (
             <div
               key={folder.label}
@@ -85,7 +91,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="flex min-w-[277px] flex-1 flex-col items-end">
+        <div className="flex min-w-[17.3125rem] flex-1 flex-col items-end">
           <Text
             as="h2"
             variant="subtitle"
@@ -103,12 +109,12 @@ export default function Projects() {
           <Text
             as="p"
             variant="body-normal"
-            className="mt-16 block w-[277px] max-w-full text-justify text-white!"
+            className="mt-2xl block w-[17.3125rem] max-w-full text-justify text-white!"
           >
             {t.description}
           </Text>
 
-          <Button type="button" variant="outline-white" className="mt-9">
+          <Button type="button" variant="outline-white" className="mt-md">
             {t.viewArchiveButton}
           </Button>
         </div>

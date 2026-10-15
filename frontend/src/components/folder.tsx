@@ -22,7 +22,7 @@ export default function Folder({
 }: FolderProps) {
   const navigate = useNavigate();
   return (
-    <div className="@container relative block w-full transition-transform duration-300 ease-out hover:-translate-y-3">
+    <div className="@container relative block w-full transition-transform duration-300 ease-out hover:-translate-y-[0.75rem]">
       <ItemButton
         imageUrl={imageUrl}
         imageAlt={imageAlt}

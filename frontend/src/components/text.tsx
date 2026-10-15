@@ -4,11 +4,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 export const textVariants = cva("text-black", {
   variants: {
     variant: {
-      "body-normal": "font-paragraf text-xl leading-8 font-normal",
+      "body-normal": "font-paragraf text-xl leading-[2rem] font-normal",
       "body-normal-uppercase":
-        "font-paragraf text-xl leading-7 font-normal uppercase",
-      title: "font-arkhaven text-8xl leading-32",
-      subtitle: "font-arkhaven text-6xl leading-16",
+        "font-paragraf text-xl leading-[1.75rem] font-normal uppercase",
+      title: "font-arkhaven text-8xl leading-[8rem]",
+      subtitle: "font-arkhaven text-6xl leading-[4rem]",
     },
   },
   defaultVariants: {

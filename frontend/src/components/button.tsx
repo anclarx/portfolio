@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import Text from "./text";
 
 export const buttonVariants = cva(
-  "inline-flex items-center justify-center cursor-pointer shrink-0 font-paragraf px-6 py-2",
+  "inline-flex items-center justify-center cursor-pointer shrink-0 font-paragraf px-sm py-[0.5rem]",
   {
     variants: {
       variant: {
